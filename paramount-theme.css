@@ -1,0 +1,179 @@
+/*
+ * Paramount identity: hardware black, warm chalk, walnut and ember gold.
+ * Recreates the original app.mjs design direction; its original CSS/video
+ * were not included in the supplied source. Menu illustrations stay intact.
+ */
+:root{--ink:#241d18;--deep:#12100e;--gold:#d4a65e;--paper:#f3eee4;--muted:#7a6a5d;--line:#ded2c1;--green:#546d46}
+body{background:var(--paper);color:var(--ink)}
+::selection{background:#d3a159;color:#17110b}
+.rail{background:#11100e;color:#b6a99a;border-right:1px solid #ac865a24}
+.rail-brand{border-bottom-color:#dac09b20}.rail-logo{color:#f4ebdb}.rail-link.active,.rail-link:hover{background:#d8aa6410;color:#e2b772}
+.rail-bottom>span{color:#a08e7b}
+.topbar{position:sticky;top:0;z-index:35;background:#171410f7;color:#f2ebde;border-bottom:1px solid #c69a5550;backdrop-filter:blur(16px)}
+.brand-symbol{color:#f4ead8}.workspace-label select{color:#c3b3a1}.workspace-label option{background:#211a15;color:#f2e9da}
+.topnav a:hover,.topnav .selected{box-shadow:0 1px #d7aa63;color:#e4bd7e}
+.tray-button .count{background:#c79a55;color:#17110c}.tray-button>.icon{color:#dfbb7f}
+.button{background:#272018;border-color:#272018;color:#fff7e9}.button:hover{background:#4c3524;border-color:#4c3524}
+.button.gold{background:#d5a454;border-color:#e1b56d;color:#1c140c;box-shadow:0 7px 25px #ca741a22}
+.button.gold:hover{background:#e5b973;border-color:#ecc68d}
+.button.outline{color:#30241b;border-color:#bba489;background:#fff7e635}.button.outline:hover{background:#e8dcc7}
+.count{background:#30251c}.text-link{color:#6b482b}
+.hero{min-height:max(620px,calc(100svh - 94px));padding-bottom:68px;background:#100e0b;color:#f6eee1;isolation:isolate;grid-template-columns:1.15fr 1fr}
+.hero:before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse at 78% 72%,#a14f1b40,transparent 54%),radial-gradient(ellipse at 22% 100%,#8b3a1425,transparent 45%),linear-gradient(110deg,#13110e,#1f170f 65%,#100d09)}
+.hero-grain{opacity:.3;z-index:1;background:repeating-linear-gradient(92deg,transparent 0 3px,#a77c4311 4px 5px);mix-blend-mode:screen}
+.hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#0c0b09d9 0%,#100d09a6 40%,#100c0729 73%,#0c09072e);pointer-events:none}
+.hero-copy{z-index:3;padding-top:clamp(65px,11vh,130px);padding-bottom:70px}
+.hero-copy .eyebrow{color:#d4b382;letter-spacing:2.7px}.hero-copy .eyebrow i{background:#e4a652;box-shadow:0 0 12px #f18e38}
+.hero h1{font-size:clamp(52px,5.3vw,86px);letter-spacing:-2.5px;line-height:1.06;margin:25px 0}
+.hero h1 em{color:#dfb371}.hero-copy>p{color:#c9baaa;font-size:14px}
+.hero-actions{margin-top:32px}.hero-link{color:#ead7bb}
+.hero-note{color:#bda98c}.hero-note>span:first-child{color:#d0b38a}
+.hero-art{z-index:2;background:radial-gradient(ellipse at 49% 46%,#b6863927,transparent 63%);overflow:visible}
+.hero-arc{border-color:#caa35e2e;top:46%;left:43%}.arc-two{border-color:#cf884a18}
+.round-seal{background:#26190dbc;border-color:#d7af725e;color:#e4be81;right:32px;top:42px}
+.hero-food-illustration{top:44%;left:42%;width:91%;max-width:525px;filter:drop-shadow(0 22px 32px #0009)}
+.hero-bar-art{bottom:93px;right:7%;width:35%;filter:drop-shadow(0 10px 20px #0008)}
+.hero-food-label{left:6%;bottom:60px;border-color:#d6a65b}.hero-food-label>span{color:#d8ac67}
+.hero-food-label strong{color:#fff0d7}.hero-food-label small{color:#bca88a}
+.hero-vertical{color:#b49a77;bottom:105px}
+.paramount-fire{position:absolute;inset:auto 0 0;height:82%;z-index:0;overflow:hidden;pointer-events:none;opacity:.85}
+.paramount-fire>svg{height:100%;width:100%;display:block}
+.fire-glow{position:absolute;inset:auto -10% -40%;height:72%;background:radial-gradient(ellipse at 65% 70%,#ff8c244c,transparent 65%);filter:blur(22px)}
+.flame-plume{transform-box:fill-box;transform-origin:50% 100%;animation:paramount-flame var(--duration,4s) var(--delay,0s) ease-in-out infinite alternate}
+@keyframes paramount-flame{0%{transform:scaleX(.83) scaleY(.84) skewX(-5deg);opacity:.5}50%{transform:scaleX(.95) scaleY(1.04) skewX(3deg);opacity:.72}100%{transform:scaleX(1.08) scaleY(.94) skewX(-2deg);opacity:.62}}
+.ember-atmosphere{position:absolute;inset:0;z-index:2;overflow:hidden;pointer-events:none}
+.ember-atmosphere i{position:absolute;width:3px;height:5px;left:var(--x);bottom:65px;border-radius:50%;background:#e7a557;box-shadow:0 0 9px 2px #e98b2944;opacity:0;animation:paramount-ember var(--duration) var(--delay) linear infinite}
+@keyframes paramount-ember{0%{transform:translate(0,15px) rotate(0);opacity:0}12%{opacity:.75}70%{opacity:.35}100%{transform:translate(var(--drift),-410px) rotate(110deg);opacity:0}}
+.hero-bottom{position:absolute;bottom:0;left:0;right:0;min-height:68px;padding:17px 48px;display:flex;align-items:center;justify-content:space-between;gap:18px;z-index:4;border-top:1px solid #d1a26225;background:#100e0b99;color:#beaa8b;font-size:9px;letter-spacing:2px}
+.hero-bottom .motion-control{border:1px solid #9b754743;border-radius:3px;background:#1f1710ba;color:#e0caab;padding:10px 14px;min-height:38px;font-size:10px;letter-spacing:.2px;cursor:pointer}
+.hero-bottom .motion-control:hover{border-color:#d4a05a;background:#39271b}.hero-bottom .motion-control:disabled{cursor:default;opacity:.65}
+.hero-bottom>span:nth-child(2){font-size:8px;letter-spacing:1.4px}
+.motion-paused .flame-plume,.motion-paused .ember-atmosphere i{animation-play-state:paused}
+.order-context{background:#e9dfcf;border-color:#ccbaa1}.branch-context>.icon{color:#936538}.branch-context select{color:#35271b}
+.branch-context .service-status{border-left-color:#cbbba4}.estimate{color:#7b6957}.segmented{background:#d9cdbb}
+.segmented button{color:#725b43}.segmented button.active{background:#30251b;color:#f4e7d3}
+.content-pad{background:linear-gradient(120deg,#fbf6eb50,transparent 55%)}
+.section-heading .eyebrow,.page-heading .eyebrow{color:#9b6b38}.section-heading .heading-dot{color:#ba803b}
+.menu-entry{background:linear-gradient(120deg,#e6d7be,#eee4d3);border-color:#c9b394}
+.menu-entry .eyebrow{color:#856038}
+.bar-entry{color:#f0e0c8;border-color:#6c4b2d;background:repeating-linear-gradient(93deg,#3a281c 0 4px,#35251a 5px 7px,#3e2b1e 8px 10px)}
+.bar-entry .eyebrow{color:#d7af6f}.menu-entry:hover{border-color:#ac7b40}
+.section-tab{background:#f9f2e6;border-color:#d2bea3;color:#67503c}
+.section-tab>span{background:#e7d8c1;color:#745738}
+.section-tab.active{background:#302117;color:#fff0d6;border-color:#835b32}
+.section-tab.active>span{background:#cda160;color:#25190f}
+.signature-categories{scrollbar-color:#bb9b6c #eee1cd}
+.category{border-color:#d9c9b0;background:#faf3e7}.category:hover{background:#eee0c8}
+.category.active{background:#e6d3ae;border-color:#ad7b3b;box-shadow:inset 0 0 0 1px #c6a16b40}
+.category span{color:#5c4430}
+.food-card{background:#fcf6eb;border-color:#d9c8ad;border-radius:6px}
+.food-card:hover{box-shadow:0 10px 28px #6c391015}
+.food-picture,.bar-card .food-picture{background:radial-gradient(ellipse at 50% 65%,#e8d9b9,#f1e7d5);border-bottom-color:#deccac}
+.food-tag{color:#876742;border-color:#c9b38d;background:#f8efd9d9}
+.alcohol-label{background:#d9c4a1;color:#6a4727}.food-bottom strong{color:#674221}.serving-unit{color:#8b7359}
+.add-button{background:#f9efd9;color:#3b291a;border-color:#bba47d}.add-button:hover{background:#362418;color:#e5b36c}
+.tray-panel,.paper{background:#fff8ec;border-color:#d9c8ad;border-radius:6px}
+.tray-panel{top:114px}.tray-empty>.icon{color:#b2966b}.tray-empty p{color:#8a7661}
+.tray-foot{color:#8f7554;border-color:#deccb0}.cart-art{background:#eddfc7}.cart-line{border-color:#e2d2b8}
+.totals>div{color:#79614b}.totals .grand-total{color:#302013}.grand-total{border-color:#d4b88f}
+.search{background:#fff9ee;border-color:#d1bb98}.search input{color:#38291d}.search .icon{color:#927754}
+.menu-disclaimer,.form-note,.serving-unit,.menu-tools .small{color:#8c755d}
+.category-heading{border-color:#d8c4a4}.category-heading .eyebrow{color:#a37843}.category-heading>span{color:#947c60}
+.gather-banner{border-color:#c7ae86}.gather-monogram{color:#a37b43;border-color:#b99967}.gather-banner .eyebrow{color:#a37843}
+.gather-story{background:repeating-linear-gradient(93deg,#37261b 0 5px,#332319 6px 7px,#3b291d 8px 11px);color:#f3e4ca}
+.gather-story p{color:#c3ab8c}.gather-story h2 em{color:#dfb376}
+footer{color:#c0a78b;border-color:#60472d;background:repeating-linear-gradient(93deg,#312218 0 4px,#2c2017 5px 8px,#33251a 9px 11px)}
+footer .brand-symbol{color:#e4c9a1}.demo-strip{background:#15120e;color:#a38b6d}.demo-strip i{color:#ca9a58}
+.form input,.form select,.form textarea,.workspace-controls select,.pour-style select{background:#fff9ee;border-color:#ceb999;color:#44311f}
+.form-error{color:#9c3c21}.form input:disabled{background:#e9ddc8}
+.callout,.serving-note{background:#eee0c8;color:#7a5c38}
+dialog{background:#fff7e9;color:#302216;border:1px solid #bd9a6540}
+dialog::backdrop{background:#100c08c9}
+.dialog-close{background:#faf0dcd9;border-color:#c6aa80;color:#725231}
+.detail-photo,.bar-detail{background:radial-gradient(ellipse at 50% 60%,#e2cda5,#eee1c6)}
+.detail-content>.eyebrow,.detail-photo .eyebrow,.dialog-body .eyebrow{color:#95703d}
+.choice span{border-color:#d2b992}.choice input:checked+span{background:#e8d3aa;border-color:#a97836}
+.choice span small{color:#8f6b3b}.addon{border-color:#dfc9a5}.addon input{accent-color:#866032}
+.detail-quantity input{background:#fff9eb;border-color:#c9b18b;color:#52381f}
+.pill{background:#e7d8bc;color:#78562d}.ticket{border-top-color:#bf8c43}
+.timeline-step{color:#a28c6b}.timeline-step>span{border-color:#cdbb9c}
+.timeline-step.reached>span{background:#71502d;border-color:#71502d;color:#fff4df}
+.timeline-step[aria-current=step]>span{box-shadow:0 0 0 5px #eadcc2}
+.timeline-step:not(:last-child):before{background:#d9c5a2}.receipt-options{color:#927957}
+.availability-item{background:#f4ead8;border-color:#d5c09e}.history-row:hover{background:#efe1c9}
+.branch-art{background:repeating-linear-gradient(92deg,#54392400 0 58px,#c6a16615 59px 60px),linear-gradient(120deg,#302219,#6e4b2b);color:#e7cba3}
+.branch-card{border-color:#d2b998;background:#fcf5e8}.branch-card:nth-child(2) .branch-art{background-image:linear-gradient(125deg,#34271e,#805a35)}.branch-card:nth-child(3) .branch-art{background-image:linear-gradient(125deg,#332218,#78502b)}
+#toast{background:#38281b;color:#f9e7c9}
+@media(max-width:1000px){
+ .hero{min-height:610px}.hero-copy{padding-top:72px}.hero h1{font-size:52px}
+ .hero-food-illustration{width:105%;max-width:none;left:43%;top:42%}
+ .hero-bar-art{right:0;bottom:105px;width:43%}.hero-food-label{bottom:67px;left:6%}
+ .hero-bottom{padding:15px 32px}.hero-bottom>span:nth-child(2){display:none}
+ .tray-panel{top:auto}
+}
+@media(max-width:760px){
+ body.is-mobile-view .topbar{background:#171410f7;color:#f2ebde;border-bottom-color:#c69a5550}
+ body.is-mobile-view .brand-symbol{background:#30251c;color:#e2b772}
+ body.is-mobile-view .wordmark small{color:#c7ad83}
+ body.is-mobile-view .app-header-pill{background:#33271b;border-color:#715331;color:#ead9bb}
+ body.is-mobile-view .app-header-pill .icon{color:#d6ad6c}
+ body.is-mobile-view .workspace-label{display:none}
+ body.is-mobile-view .live-order-banner{background:linear-gradient(90deg,#302117,#48321f);color:#f4e7d3}
+ .mobile-nav{background:#17120e;border-color:#97704570;box-shadow:0 -4px 20px #20130826}
+ .mobile-nav .rail-link{color:#b7a389}.mobile-nav .rail-link.active{color:#edc388;background:#332317}
+ .mobile-nav .rail-link.active:before{background:#d5a259}
+ .hero{min-height:620px}.hero h1{font-size:48px}.hero-copy{padding-top:65px}
+ .round-seal{right:10px;top:35px;width:75px;height:75px}.round-seal b{font-size:17px}
+ .hero-bottom{padding:14px 24px}
+}
+@media(max-width:540px){
+ .hero{min-height:0;display:block;padding-bottom:64px}
+ .hero-copy{padding:40px 24px 0}.hero h1{font-size:52px;letter-spacing:-2px;margin:21px 0}
+ .hero-copy .eyebrow{font-size:7px;letter-spacing:2px}.hero-copy>p{font-size:12px}
+ .hero-actions{margin-top:25px;gap:20px}.hero-note{display:none}
+ .hero-art{height:310px;margin-top:4px;overflow:hidden}
+ .hero-food-illustration{width:90%;max-width:360px;left:44%;top:43%}
+ .hero-bar-art{right:2%;bottom:44px;width:34%}.round-seal{right:23px;top:12px}
+ .hero-food-label{left:25px;bottom:21px;background:#1d140bbf;padding:8px 12px}
+ .hero-food-label small{display:none}.hero-food-label strong{font-size:17px}
+ .hero-arc{left:45%;top:44%;width:280px;height:280px}.arc-two{width:330px;height:330px}
+ .hero-bottom{min-height:64px;padding:12px 20px;gap:9px;font-size:7px;letter-spacing:1px}
+ .hero-bottom .motion-control{font-size:9px;padding:9px 10px;min-height:36px}
+ .paramount-fire{height:57%}
+ .ember-atmosphere i{bottom:55px}
+}
+/* Keep the native phone shell inside the Paramount palette on desktop too. */
+body.mobile-frame-mode{background:#100e0b}
+body.mobile-frame-mode #app{border-color:#30251c;box-shadow:0 32px 90px #0009,0 0 0 1px #d7ad7222}
+body.mobile-frame-mode .mobile-status-bar{background:#f3eee4;color:#241d18}
+body.mobile-frame-mode .status-notch{background:#241d18}
+body.mobile-frame-mode .topbar{background:#171410f7;color:#f2ebde;border-bottom-color:#c69a5550}
+body.mobile-frame-mode .brand-symbol{background:#30251c;color:#e2b772}
+body.mobile-frame-mode .wordmark small{color:#c7ad83}
+body.mobile-frame-mode .app-header-pill{background:#33271b;border-color:#715331;color:#ead9bb}
+body.mobile-frame-mode .app-header-pill .icon{color:#d6ad6c}
+body.mobile-frame-mode .workspace-label select{color:#ead9bb}
+body.mobile-frame-mode .workspace-label option{background:#211a15;color:#f2e9da}
+body.mobile-frame-mode .frame-toggle-btn{background:#211a15;border-color:#705533;color:#e3c48e}
+body.mobile-frame-mode .frame-toggle-btn.active{background:#30251c;border-color:#906b3d;color:#e3b86d}
+body.mobile-frame-mode .live-order-banner{background:linear-gradient(90deg,#302117,#48321f);color:#f4e7d3}
+body.mobile-frame-mode .mobile-nav{background:#17120e;border-color:#97704570}
+body.mobile-frame-mode .mobile-nav .rail-link{color:#b7a389}
+body.mobile-frame-mode .mobile-nav .rail-link.active{color:#edc388;background:#332317}
+body.mobile-frame-mode .mobile-nav .rail-link.active:before{background:#d5a259}
+body.mobile-frame-mode .floating-tray-bar{background:#302117;color:#fff0d6;border-color:#a77b43}
+body.mobile-frame-mode dialog{background:#fff7e9;color:#302216}
+@media(prefers-reduced-motion:reduce){
+ .flame-plume,.ember-atmosphere i{animation:none!important}
+ .flame-plume{opacity:.6}.ember-atmosphere i{display:none}
+}
+/* Brand the mobile concept shell and shared header controls in Paramount colors. */
+.brand-symbol{background:#30251c;color:#e2b772}
+.app-header-pill{background:#33271b;border-color:#715331;color:#ead9bb}
+.app-header-pill .icon{color:#d6ad6c}
+.live-order-banner{background:linear-gradient(90deg,#302117,#48321f);color:#f4e7d3}
+.frame-toggle-btn{background:#211a15;border-color:#705533;color:#ead9bb}
+.frame-toggle-btn:hover{background:#39271b}
+.frame-toggle-btn.active{background:#30251c;border-color:#906b3d;color:#e3b86d}
+.workspace-label select{background:#211a15;color:#ead9bb;border-color:#705331}
+.tray-button{background:#211a15;color:#ead9bb;border-color:#705331}
